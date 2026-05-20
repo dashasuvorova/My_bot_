@@ -17,7 +17,9 @@ def register_handlers(dp: Dispatcher):
             "/start — запуск бота\n"
             "/schedule — расписание\n"
             "/teachers — преподаватели\n"
+            "/admin — панель администратора\n"
             "/help — помощь"
+            
         )
 
         await message.answer(
