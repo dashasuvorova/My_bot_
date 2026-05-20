@@ -50,9 +50,10 @@ def register_admin_handlers(dp: Dispatcher):
 
     # КНОПКА ДОБАВИТЬ ОБЪЯВЛЕНИЕ
 
-    @dp.message_handler(
-        lambda message: message.text == "➕ Добавить объявление"
-    )
+   @dp.message_handler(
+    lambda message: message.text == "➕ Добавить объявление",
+    state="*"
+)
     async def add_announcement(message: types.Message):
 
         if not is_admin(message.from_user.id):
@@ -91,8 +92,9 @@ def register_admin_handlers(dp: Dispatcher):
     # ВСЕ ОБЪЯВЛЕНИЯ
 
     @dp.message_handler(
-        lambda message: message.text == "📢 Все объявления"
-    )
+    lambda message: message.text == "📢 Все объявления",
+    state="*"
+)
     async def show_announcements(message: types.Message):
 
         cursor.execute(
