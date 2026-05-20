@@ -20,16 +20,26 @@ main_menu.add(btn3)
 async def start(message: types.Message):
 
     await message.answer(
-        "Добро пожаловать в музыкальную школу!",
+        ""🎵 Добро пожаловать в информационную систему музыкальной школы!\n\nВыберите нужный раздел:",
         reply_markup=main_menu
     )
 
 @dp.message_handler(lambda message: message.text == "Расписание")
 async def schedule(message: types.Message):
 
-    await message.answer(
-        "Расписание:\nФортепиано — 15:00\nВокал — 17:00"
+    text = (
+        "🎼 Расписание занятий\n\n"
+        "Понедельник\n"
+        "• Фортепиано — 15:00\n"
+        "• Вокал — 17:00\n\n"
+        "Вторник\n"
+        "• Скрипка — 14:00\n"
+        "• Сольфеджио — 16:00\n\n"
+        "Среда\n"
+        "• Гитара — 15:30\n"
     )
+
+    await message.answer(text)
 
 @dp.message_handler(lambda message: message.text == "Преподаватели")
 async def teachers(message: types.Message):
