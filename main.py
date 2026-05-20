@@ -28,14 +28,14 @@ async def start(message: types.Message):
 async def schedule(message: types.Message):
 
     await message.answer(
-        "Расписание:\\nФортепиано — 15:00\\nВокал — 17:00"
+        "Расписание:\nФортепиано — 15:00\nВокал — 17:00"
     )
 
 @dp.message_handler(lambda message: message.text == "Преподаватели")
 async def teachers(message: types.Message):
 
     await message.answer(
-        "Преподаватели:\\nИванова Е.А.\\nПетров А.В."
+        "Преподаватели:\nИванова Е.А.\nПетров А.В."
     )
 
 @dp.message_handler(lambda message: message.text == "Объявления")
