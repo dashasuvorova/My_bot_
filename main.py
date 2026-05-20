@@ -20,7 +20,7 @@ main_menu.add(btn3)
 async def start(message: types.Message):
 
     await message.answer(
-        ""🎵 Добро пожаловать в информационную систему музыкальной школы!\n\nВыберите нужный раздел:",
+        "🎵 Добро пожаловать в информационную систему музыкальной школы!\n\nВыберите нужный раздел:",
         reply_markup=main_menu
     )
 
@@ -45,14 +45,14 @@ async def schedule(message: types.Message):
 async def teachers(message: types.Message):
 
     await message.answer(
-        "Преподаватели:\nИванова Е.А.\nПетров А.В."
+        "👩‍🏫 Преподаватели:\n\nИванова Е.А.\nПетров А.В."
     )
 
 @dp.message_handler(lambda message: message.text == "Объявления")
 async def news(message: types.Message):
 
     await message.answer(
-        "20 мая состоится отчетный концерт!"
+        "📢 20 мая состоится отчетный концерт!"
     )
 
 if __name__ == "__main__":
