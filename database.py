@@ -1,6 +1,9 @@
 import sqlite3
 
-conn = sqlite3.connect("music_school.db")
+conn = sqlite3.connect(
+    "music_school.db",
+    check_same_thread=False
+)
 cursor = conn.cursor()
 
 # ТАБЛИЦА ПРЕПОДАВАТЕЛЕЙ
