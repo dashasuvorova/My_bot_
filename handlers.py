@@ -17,9 +17,7 @@ def register_handlers(dp: Dispatcher):
             "/start — запуск бота\n"
             "/schedule — расписание\n"
             "/teachers — преподаватели\n"
-            "/admin — панель администратора\n"
             "/help — помощь"
-            
         )
 
         await message.answer(
@@ -193,42 +191,5 @@ def register_handlers(dp: Dispatcher):
             "📞 Телефон: +7 (900) 123-45-67\n"
             "✉️ Email: music_school@mail.ru"
         )
-
-        await message.answer(text)
-    # РАСПИСАНИЕ ПО ДНЯМ
-
-    @dp.message_handler(
-        lambda message: message.text in [
-            "Понедельник",
-            "Вторник",
-            "Среда",
-            "Четверг",
-            "Пятница"
-        ]
-    )
-    async def weekday_schedule(message: types.Message):
-
-        day = message.text
-
-        cursor.execute(
-            "SELECT lesson, time FROM schedule WHERE day=?",
-            (day,)
-        )
-
-        rows = cursor.fetchall()
-
-        text = f"📅 Расписание на {day}\n\n"
-
-        if rows:
-
-            for row in rows:
-
-                text += (
-                    f"• {row[0]} — {row[1]}\n"
-                )
-
-        else:
-
-            text += "Занятий нет."
 
         await message.answer(text)
