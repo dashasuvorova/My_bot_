@@ -8,7 +8,7 @@ from states import AddAnnouncementState
 
 # ID администратора
 
-ADMINS = [123456789]
+ADMINS = [419116810]
 
 # АДМИН КЛАВИАТУРА
 
